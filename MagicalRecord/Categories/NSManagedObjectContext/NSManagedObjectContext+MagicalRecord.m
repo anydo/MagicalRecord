@@ -185,6 +185,12 @@ static id MagicalRecordUbiquitySetupNotificationObserver;
     [defaultContext reset];
 }
 
++ (void) MR_reset
+{
+    MagicalRecordDefaultContext = nil;
+    MagicalRecordRootSavingContext = nil;
+}
+
 - (void) MR_deleteObjects:(id <NSFastEnumeration>)objects
 {
     for (NSManagedObject *managedObject in objects)

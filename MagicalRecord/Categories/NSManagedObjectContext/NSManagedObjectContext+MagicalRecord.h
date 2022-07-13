@@ -110,6 +110,11 @@
 + (void) MR_resetDefaultContext;
 
 /**
+ Reset the MagicalRecord stack.
+ */
++ (void) MR_reset;
+
+/**
  Delete the provided objects from the context
 
  @param objects An object conforming to `NSFastEnumeration`, containing NSManagedObject instances
