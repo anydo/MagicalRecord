@@ -66,6 +66,11 @@ static id MagicalRecordUbiquitySetupNotificationObserver;
 {
     NSManagedObjectContext *context = [self MR_newPrivateQueueContext];
     [context setParentContext:parentContext];
+    
+    // pass the merge policy from parent to child context
+    [context setMergePolicy:parentContext.mergePolicy];
+    context.automaticallyMergesChangesFromParent = parentContext.automaticallyMergesChangesFromParent;
+    
     [context MR_obtainPermanentIDsBeforeSaving];
     return context;
 }
