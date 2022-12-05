@@ -69,7 +69,6 @@ static id MagicalRecordUbiquitySetupNotificationObserver;
     
     // pass the merge policy from parent to child context
     [context setMergePolicy:parentContext.mergePolicy];
-    context.automaticallyMergesChangesFromParent = parentContext.automaticallyMergesChangesFromParent;
     
     [context MR_obtainPermanentIDsBeforeSaving];
     return context;
